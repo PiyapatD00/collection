@@ -308,7 +308,6 @@ class WarmupLesson(Lesson):
         self.clear_stage()
 
     def beat_recap(self):
-        self.drop_caption()                    # the last beat's caption does not belong here
         self.header("Takeaways")
         rows = self.bullets([
             r"1. Eigenvectors turn a matrix into independent scalings: $c_i\mapsto\lambda_i c_i$.",

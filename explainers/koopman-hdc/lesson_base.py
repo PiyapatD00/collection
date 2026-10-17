@@ -46,13 +46,13 @@ class Lesson(PatternScene):
         self.wait(wait)
 
     def header(self, text):
+        """New section label, top left. A new section also retires the last caption,
+        so it never sits under content it was not written for."""
         new = Tex(text, font_size=30).set_color(GREY_A)
         new = self.hud(new.to_corner(UL, buff=0.3))
-        if self.header_mob is None:
-            self.play(FadeIn(new, shift=0.2 * RIGHT), run_time=0.6)
-        else:
-            self.play(FadeOut(self.header_mob), FadeIn(new, shift=0.2 * RIGHT), run_time=0.6)
-        self.header_mob = new
+        outs = [m for m in (self.header_mob, self.caption_mob) if m is not None]
+        self.play(*[FadeOut(m) for m in outs], FadeIn(new, shift=0.2 * RIGHT), run_time=0.6)
+        self.header_mob, self.caption_mob = new, None
 
     def chapter(self, kicker, title, sub=None):
         k = Tex(kicker, font_size=30).set_color(GREY_B)

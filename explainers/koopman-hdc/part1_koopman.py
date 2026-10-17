@@ -666,7 +666,6 @@ class PendulumLesson(Lesson):
         self.clear_stage()
 
     def beat_recap(self):
-        self.drop_caption()                    # the last beat's caption does not belong here
         self.header("Part 1 in four lines")
         rows = self.bullets([
             r"1. $\mathcal{K}g=g\circ F$ is linear on observables, even for nonlinear $F$.",
