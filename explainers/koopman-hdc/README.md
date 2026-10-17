@@ -41,7 +41,8 @@ bash make_video.sh 640x360 30       # quick draft
 python3 render_check.py part2_hdc.py HDCBasics --at 40 90    # stills of one scene
 ```
 
-On a CPU-only machine the final render takes about an hour; drafts take minutes.
+On a CPU-only machine (4 cores, no GPU) the final render takes about 15 minutes;
+drafts take a few.
 
 ## Files
 

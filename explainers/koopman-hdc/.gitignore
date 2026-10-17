@@ -3,3 +3,4 @@ render.*.out
 make.log
 __pycache__/
 *.storyboard*.png
+render_fix/
